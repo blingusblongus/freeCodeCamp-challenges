@@ -1,3 +1,7 @@
+// find the symmetric difference between two or more arrays, and return the
+// result as an arrays
+
+// working on finding the symmetric difference between just two:—
 const firstArr = [1, 2, 3];
 const secArr = [2, 3, 4];
 const diff = [];
