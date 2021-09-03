@@ -4,15 +4,23 @@
 // working on finding the symmetric difference between just two:—
 const firstArr = [1, 2, 3];
 const secArr = [2, 3, 4];
-const sim = [];
-const diff = [];
+
+//I don't think I understand recursion well enough yet
+/*
+function testRecursively(arrays){
+  if(arrays.length <= 2) return;
+  return testRecursively()
+}
+*/
 
 function testFull(f, s){
-  testPart(f,s);
-  testPart(s,f);
+  const diff = [];
+  testPart(f,s,diff);
+  testPart(s,f,diff);
+  return diff;
 }
 
-function testPart(first, second){
+function testPart(first, second, diff){
   console.log('testPart runs...');
   for(x of first){
     let match = false;
@@ -30,7 +38,7 @@ function testPart(first, second){
     //push to diff
 
     if(!match && diff.indexOf(x) === -1){
-      console.log('pushing...');
+      console.log('pushing...', x);
       diff.push(x);
     }
   }
@@ -39,5 +47,5 @@ function testPart(first, second){
 //run the test!
 testFull(firstArr, secArr);
 
-console.log('sim: ', sim);
-console.log('diff: ', diff);
+//log result
+console.log(testFull(firstArr, secArr));
