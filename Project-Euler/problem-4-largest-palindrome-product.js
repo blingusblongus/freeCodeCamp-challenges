@@ -5,18 +5,27 @@ The largest palindrome made from the product of two 2-digit numbers is 9009 = 91
 Find the largest palindrome made from the product of two n-digit numbers.
 */
 
+//notes: from getting stuck and researching, it looks like I actually do have to
+// brute force it.
+
 function largestPalindromeProduct(n) {
-  let numStr = "";
+  let numStrHigh = "";
+  let numStrLow = "";
 
   //find largest n-digit number and assign to numStr
   for(let i = 0; i<n; i++){
-    numStr += "9";
+    numStrHigh += "9";
+    numStrLow += (i === 0) ? "1" : "0";
   }
 
-  //convert numStr to int
-  let num = parseInt(numStr);
+  console.log('numStrHigh: ', numStrHigh);
+  console.log('numStrLow: ', numStrLow);
 
-  
+  //convert numStr to int
+  let upperNum = parseInt(numStrHigh);
+  let lowerNum = parseInt(numStrLow);
+
+
 
 
   return true;
