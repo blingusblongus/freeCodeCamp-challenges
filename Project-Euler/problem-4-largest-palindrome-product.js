@@ -52,5 +52,4 @@ function checkSymmetry(num) {
   return true;
 }
 
-console.log(checkSymmetry(901209));
 largestPalindromeProduct(3);
