@@ -18,10 +18,18 @@ function smallestMult(n) {
   //test divisibility
   let found = false;
   let val = factors[factors.length - 1];
-  while(!found){
-    if(checkRemainder(factors, val)) return val;
+  let max = factors.reduce((product, el)=>(product *= el));
+  let result;
+  console.log('max: ', max);
+
+  while(!found && val < max){
+    if(checkRemainder(factors, val)){
+      result = val;
+      found = true;
+    }
     val++;
   }
+  return result;
 }
 
 function checkRemainder(array, val){
@@ -37,6 +45,5 @@ let testArr = [1,2,3];
 console.log(checkRemainder(testArr, 6));
 */
 
-smallestMult(20);
 console.log(smallestMult(20))
 console.log('done');
