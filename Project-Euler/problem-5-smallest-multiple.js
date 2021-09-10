@@ -16,8 +16,12 @@ function smallestMult(n) {
   }
 
   //test divisibility
-  console.log(factors)
-  return true;
+  let found = false;
+  let val = factors[factors.length - 1];
+  while(!found){
+    if(checkRemainder(factors, val)) return val;
+    val++;
+  }
 }
 
 function checkRemainder(array, val){
@@ -28,6 +32,11 @@ function checkRemainder(array, val){
   return true;
 }
 
+/* check checkRemainder():
 let testArr = [1,2,3];
-console.log(checkRemainder(testArr, 7));
+console.log(checkRemainder(testArr, 6));
+*/
+
 smallestMult(20);
+console.log(smallestMult(20))
+console.log('done');
