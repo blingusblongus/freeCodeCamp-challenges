@@ -11,6 +11,7 @@ Find the largest palindrome made from the product of two n-digit numbers.
 function largestPalindromeProduct(n) {
   let numStrHigh = "";
   let numStrLow = "";
+  let maxPal = 0;
 
   //find largest n-digit number and assign to numStr
   for(let i = 0; i<n; i++){
@@ -25,10 +26,20 @@ function largestPalindromeProduct(n) {
   let upperNum = parseInt(numStrHigh);
   let lowerNum = parseInt(numStrLow);
 
+  //find all products and test for symmetry
+  for(let i=lowerNum; i<upperNum + 1; i++){
+    for(let j=lowerNum; j<upperNum + 1; j++){
+      let product = i*j;
 
+      // if symmetric and bigger than previously found answer, update maxPal;
+      if(checkSymmetry(product) && product > maxPal){
+        maxPal = product;
+      }
+    }
+  }
 
-
-  return true;
+  console.log('maxPal: ', maxPal);
+  return maxPal;
 }
 
 // helper to check symmetry - works!
