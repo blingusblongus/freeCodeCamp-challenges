@@ -3,14 +3,16 @@
 
 // working on finding the symmetric difference between just two:—
 const firstArr = [1, 2, 3];
-const secArr = [2, 3, 4];
+const secArr = [5, 2, 1, 4];
 const arrays = [firstArr, secArr];
 
 //I don't think I understand recursion well enough yet
+
 function testRecursively(arrays){
   if(arrays.length <= 2) return testFull(arrays[0], arrays[1]);
-  return testRecursively()
+  //return testRecursively()
 }
+// still needs sorting
 
 function testFull(f, s){
   const diff = [];
