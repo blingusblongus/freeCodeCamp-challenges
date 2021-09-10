@@ -6,6 +6,18 @@ Find the largest palindrome made from the product of two n-digit numbers.
 */
 
 function largestPalindromeProduct(n) {
+  let numStr = "";
+
+  //find largest n-digit number and assign to numStr
+  for(let i = 0; i<n; i++){
+    numStr += "9";
+  }
+
+  //convert numStr to int
+  let num = parseInt(numStr);
+
+  
+
 
   return true;
 }
